@@ -16,4 +16,9 @@
         android:text="Aktivasyon Kodu!"
         android:textSize="30sp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="gonder"
+        android:text="Gönder" />
 </LinearLayout>

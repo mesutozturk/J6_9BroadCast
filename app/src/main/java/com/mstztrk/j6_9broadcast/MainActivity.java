@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.SmsMessage;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         txtAktivasyon = (TextView) findViewById(R.id.txtActivasyonKodu);
         iFilter.addAction("android.provider.Telephony.SMS_RECEIVED");
+    }
+
+    public void gonder(View view) {
+        Intent intent = new Intent();
+        int rnd = (int) (Math.random() * 100);
+        intent.setAction("CUSTOM_MSG");
+        intent.putExtra("msg", rnd);
+        sendBroadcast(intent);
     }
 
     @Override
